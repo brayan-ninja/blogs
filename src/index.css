@@ -51,6 +51,24 @@ input,  textarea {
   border: none;
   border-radius: 8px;
 }
+button {
+  /* General styles */
+  background-color: blueviolet;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.content{
+  max-width:600px;
+  margin: 40px auto;
+  padding : 20px;
+  text-align: left;
+
+}
 
 
 
