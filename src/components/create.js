@@ -1,5 +1,10 @@
-import Form from 'react-bootstrap/Form';
+import axios from 'axios';
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
+
 
 function Create() {
 
@@ -15,11 +20,36 @@ function Create() {
       return {...prev, [name]:value}
   })
 
+  } 
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:4000/blogs', data)
+      .then(res => {
+  
+        toast.success('new blog added successfuly',{
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+
+        })
+      })
+      .catch(err => {
+        toast.error('An error occurred while adding the blog',{
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+         
+        })
+
+      })
+
   }
+    
+    
+
 
   return (
     <div>
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Title:</Form.Label>
         <Form.Control  name="title" type="title" onChange={handlechange} placeholder="Enter the tittle" />
@@ -40,7 +70,10 @@ function Create() {
         <p>{data.body}</p>
 
       </Form.Group>
+      <ToastContainer/>
+      
     </Form>
+    
     </div>
   );
 }

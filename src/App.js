@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Create from './components/create.js';
 import Home from './components/home.js';
+import BlogDetails from './components/blogdetails.js';
+
 import './App.css';
 
 
@@ -21,9 +23,13 @@ function App() {
         <Route path="/Create">
         <Create/>
         </Route>
+
+        <Route path="/Blog-details/:id">
+         <BlogDetails/>
+        </Route>
+
+  
       </Switch>
-    
-      
        
      </div>
     </div>

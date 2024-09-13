@@ -1,9 +1,14 @@
-function Home() {
-    return (
-      <div>
-        <h1>wagwan</h1>
-     </div>
-    );
-  }
+import BlogList from "./BlogList";
+import useFetch from "./useFetch";
 
-  export default Home;
+const Home = () => {
+    const {data:blogs}= useFetch('http://localhost:4000/blogs')
+
+    return (
+        <div className="home">
+        {blogs && <BlogList blogs={blogs} title="All blogs" />}
+        </div>
+     );
+}
+ 
+export default Home;
