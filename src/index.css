@@ -69,8 +69,23 @@ button {
   text-align: left;
 
 }
+.preview{
+  padding: 10px 20px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px 0;
 
-
+}
+,preview:hover{
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.preview h3{
+  font-size:15px;
+  color:gray;
+  margin: 0;
+}
+.preview a{
+  text-decoration: none;
+}
 
 
 
